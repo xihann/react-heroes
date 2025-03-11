@@ -11,15 +11,21 @@ export const AppRouter = () => {
   return (
     <>
 
-      <Routes>
-        <Route path='login' element={
+      <Routes future={{
+          v7_startTransition: true,
+          v7_relativeSplatPath: true,
+        }}>
+
+        <Route path='login' element={ 
+
           <PublicRoute>
             <LoginPage />
           </PublicRoute>
         }
         />
 
-        <Route path="/*" element={
+        <Route path="/*" element={ 
+
           <PrivateRoute >
             <HeroesRoutes />
           </PrivateRoute>
